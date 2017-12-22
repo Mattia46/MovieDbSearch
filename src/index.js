@@ -1,1 +1,1 @@
-console.log('Movie DB search')
+console.log('Movie DB search');
