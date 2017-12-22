@@ -4,7 +4,8 @@
   "description": "Single Page App to search movies",
   "main": "index.js",
   "scripts": {
-    "test": "yarn test"
+    "test": "yarn test",
+    "start": "./node_modules/.bin/webpack-dev-server"
   },
   "author": "Mattia Assogna",
   "license": "ISC",
@@ -14,9 +15,12 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
     "eslint": "^4.13.1",
+    "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.4",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
