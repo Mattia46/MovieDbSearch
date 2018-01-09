@@ -4,6 +4,7 @@ node_modules
 # misc
 package-lock.json
 yarn.lock
+coverage
 .DS_Store
 .env
 
