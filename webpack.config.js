@@ -11,7 +11,10 @@ const config = {
 		filename: 'bundle.js'
 	},
 	plugins: [
-		new HtmlWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			template: './index.html',
+			filename: './index.html'
+		}),
 		new Dotenv({
 			path: '.env',
 		})
