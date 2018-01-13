@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Main.css';
 import option from './../Utils/utils.js';
 import {
     apiFactoryList,
@@ -40,7 +39,7 @@ export default class Main extends Component {
             <div>
                 <div className="container">
                     <h1> The Movie DB </h1>
-                    <div className="container">
+                    <div>
                         {links}
                     </div>
                 </div>

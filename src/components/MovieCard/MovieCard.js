@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import './MovieCard.css';
 let imageUrl = 'https://image.tmdb.org/t/p/w300/';
 
 const MovieCard = (props) => {
