@@ -9,10 +9,6 @@ export const bodyWithParam = {
 
 export const body = {
 	method: 'GET',
-	headers: {
-		'apikey': 'apikey',
-		'Content-Type': 'application/json'
-	}
 };
 
 export const batmanObj = {
