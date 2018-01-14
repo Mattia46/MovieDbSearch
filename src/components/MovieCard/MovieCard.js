@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React from 'react';
 let imageUrl = 'https://image.tmdb.org/t/p/w300/';
 
 const MovieCard = (props) => {
@@ -15,7 +15,7 @@ const MovieCard = (props) => {
                 <p className="movieDescription">
                         {props.data.overview}
                 </p>
-                <div className="moreInfo">
+                <div className="moreInfo" onClick={() => props.getSelectedMovie(props.data)}>
                       More Info
                 </div>
             </div>

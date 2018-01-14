@@ -1,12 +1,3 @@
-export const bodyWithParam = {
-	method: 'GET',
-	headers: {
-		'apikey': 'apikey',
-		'Content-Type': 'application/json'
-	},
-	params: { 'query': 'Batman' }
-};
-
 export const body = {
 	method: 'GET',
 };
@@ -44,7 +35,7 @@ export const topMovies = {
 };
 
 export const fakeFetchMovie = jest.fn().mockReturnValue(Promise.resolve({
-	json: () => (batman)
+	json: () => (batmanObj)
 }));
 
 export const fakeFetch = jest.fn().mockReturnValue(Promise.resolve({

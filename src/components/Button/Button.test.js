@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-import MovieButton from './Button';
+import { MovieButton, SelectMovieButton } from './Button';
 
 describe('Button Component', () => {
     const movie = {
@@ -10,9 +10,9 @@ describe('Button Component', () => {
 
     const wrapper = shallow(<MovieButton onClick='method' movie={movie}/>);
 
-	it('should render a button with Top Movie', () => {
+    it('should render a button with Top Movie', () => {
         expect(wrapper.contains('Top Movie Type')).toBe(true);
-	});
+    });
 
     it('should has a name', () => {
         expect(wrapper.name()).toEqual('button');
@@ -20,6 +20,18 @@ describe('Button Component', () => {
 
     it('should has props', () => {
         expect(wrapper.props().children).toEqual('Top Movie Type');
+    });
+});
+
+describe('Select Movie Button:', () => {
+    const movie = {
+        title: 'Batman'
+    };
+
+    const wrapper = shallow(<SelectMovieButton onClick='method' movie={movie}/>);
+
+    it('should render a list of two movies', () => {
+        expect(wrapper.contains('Batman')).toBe(true);
     });
 
 

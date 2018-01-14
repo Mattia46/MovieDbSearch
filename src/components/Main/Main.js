@@ -5,37 +5,72 @@ import {
     apiFactorySearch
 } from './../Service/api.js';
 import MovieCard from './../MovieCard/MovieCard.js';
-import MovieButton from './../Button/Button.js';
+import { MovieButton, SelectMovieButton } from './../Button/Button.js';
+import MoviePage from './../MoviePage/MoviePage.js';
 
 
 export default class Main extends Component {
-    state = {
-        movie: []
-    };
+    initialState = {
+        movies: [],
+        listMovie: [],
+        selectedMovie: '',
+    }
+    state = this.initialState;
 
-    getMovie = (type) =>
+    resetState = () =>
+        this.setState(this.initialState);
+
+    getMovies = (type) =>
         apiFactoryList(type)
-            .then(data => this.setState({
-                movie: data.results
-        }));
+            .then(data => {
+                this.resetState();
+                this.setState({ movies: data.results });
+            });
+
+    searchMovie = (e) =>
+        apiFactorySearch(e.target.value)
+            .then(data => data.results.filter(x => x.title))
+            .then(data => {
+                this.resetState();
+                this.setState({ listMovie: data });
+            });
+
+    getSelectedMovie = (movie) => {
+        this.resetState();
+        this.setState({selectedMovie: movie});
+    }
+
+    showSelectedMovie = () => {
+        if(this.state.selectedMovie) {
+            return <MoviePage movie={this.state.selectedMovie} />;
+        }
+    }
 
     render() {
-        const movie = this.state.movie.map(
+        const movies = this.state.movies.map(
             x =>
                 <MovieCard
                     key={x.id}
                     data={x}
+                    getSelectedMovie={this.getSelectedMovie}
             />
         );
         const links = option.map(
-            x =>
-                <MovieButton
-                    onClick={this.getMovie}
+            x => <MovieButton
+                    onClick={this.getMovies}
                     key={x.link}
                     movie={x}
                 />
         );
-        return (
+        const listMovieSearched = this.state.listMovie.map(
+            x => <SelectMovieButton
+                onClick={this.getSelectedMovie}
+                movie={x}
+                key={x.id}
+            />
+        );
+
+            return (
             <div>
                 <div className="container">
                     <h1> The Movie DB </h1>
@@ -43,8 +78,18 @@ export default class Main extends Component {
                         {links}
                     </div>
                 </div>
+                <form onChange={this.searchMovie} className="container">
+                    <label>
+                    Search for:
+                        <input type="text" name="movieInput"/>
+                    </label>
+                    {listMovieSearched}
+                </form>
+                <div>
+                    {this.showSelectedMovie()}
+                </div>
                 <div className="main">
-                    {movie}
+                    {movies}
                 </div>
             </div>
         );

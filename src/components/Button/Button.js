@@ -1,9 +1,14 @@
 import React from 'react';
 
-const MovieButton = (prop) =>
+export const MovieButton = (prop) =>
     <button
         onClick={() => prop.onClick(prop.movie.link)}>
         {prop.movie.type}
     </button>;
 
-export default MovieButton;
+export const SelectMovieButton = (prop) =>
+    <h3
+        onClick={() => prop.onClick(prop.movie)}>
+        {prop.movie.title}
+    </h3>;
+
