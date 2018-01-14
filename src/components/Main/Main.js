@@ -72,20 +72,17 @@ export default class Main extends Component {
 
             return (
             <div>
-                <div className="container">
-                    <h1> The Movie DB </h1>
-                    <div>
+                <div className="mainBar">
+                    <h1 className="mainTitle"> The Movie DB </h1>
+                    <div className="links">
                         {links}
                     </div>
+                    <form onChange={this.searchMovie} className="searchBar">
+                        <input className="input" placeholder="Type the movie to search" type="text" name="movieInput"/>
+                        {listMovieSearched}
+                    </form>
                 </div>
-                <form onChange={this.searchMovie} className="container">
-                    <label>
-                    Search for:
-                        <input type="text" name="movieInput"/>
-                    </label>
-                    {listMovieSearched}
-                </form>
-                <div>
+                <div className="moviePageContainer">
                     {this.showSelectedMovie()}
                 </div>
                 <div className="main">

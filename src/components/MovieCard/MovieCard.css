@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+div.mainDiv:hover {
+    background-color: #009595;
+    color: white;
+}
+
 .img {
     overflow: hidden;
     display: block;
@@ -47,4 +52,8 @@
     padding: 16px;
 }
 
-
+@media(max-width: 500px) {
+    .title {
+        margin-right: 42px;
+    }
+}
