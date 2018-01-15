@@ -17,6 +17,9 @@ export default class Main extends Component {
     }
     state = this.initialState;
 
+    componentWillMount = () =>
+        this.getMovies('movie/top_rated');
+
     resetState = () =>
         this.setState(this.initialState);
 
