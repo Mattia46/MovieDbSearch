@@ -33,7 +33,5 @@ describe('Select Movie Button:', () => {
     it('should render a list of two movies', () => {
         expect(wrapper.contains('Batman')).toBe(true);
     });
-
-
 });
 

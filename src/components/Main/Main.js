@@ -28,7 +28,8 @@ export default class Main extends Component {
             .then(data => {
                 this.resetState();
                 this.setState({ movies: data.results });
-            });
+            })
+            .catch(err => err);
 
     searchMovie = (e) =>
         apiFactorySearch(e.target.value)
@@ -36,7 +37,8 @@ export default class Main extends Component {
             .then(data => {
                 this.resetState();
                 this.setState({ listMovie: data });
-            });
+            })
+            .catch(err => err);
 
     getSelectedMovie = (movie) => {
         this.resetState();
@@ -51,27 +53,26 @@ export default class Main extends Component {
 
     render() {
         const movies = this.state.movies.map(
-            x =>
-                <MovieCard
-                    key={x.id}
-                    data={x}
-                    getSelectedMovie={this.getSelectedMovie}
+            x => <MovieCard
+                key={x.id}
+                data={x}
+                getSelectedMovie={this.getSelectedMovie}
             />
-        );
+            );
         const links = option.map(
             x => <MovieButton
-                    onClick={this.getMovies}
-                    key={x.link}
-                    movie={x}
-                />
-        );
-        const listMovieSearched = this.state.listMovie.map(
-            x => <SelectMovieButton
-                onClick={this.getSelectedMovie}
+                onClick={this.getMovies}
+                key={x.link}
                 movie={x}
+            />
+            );
+        const listMovieSearched = this.state.listMovie.map(
+                x => <SelectMovieButton
+                onClick={this.getSelectedMovie}
+                    movie={x}
                 key={x.id}
             />
-        );
+            );
 
             return (
             <div>
@@ -92,6 +93,6 @@ export default class Main extends Component {
                     {movies}
                 </div>
             </div>
-        );
+            );
     }
 }
