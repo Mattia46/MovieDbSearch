@@ -73,7 +73,7 @@ export default class Main extends Component {
             return (
             <div>
                 <div className="mainBar">
-                    <h1 className="mainTitle"> The Movie DB </h1>
+                    <h1 className="mainTitle">The Movie DB</h1>
                     <div className="links">
                         {links}
                     </div>

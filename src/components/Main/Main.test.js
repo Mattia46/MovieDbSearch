@@ -24,7 +24,7 @@ describe('Main Component', () => {
     ];
 
 	it('should has a title', () => {
-		expect(wrapper.contains(<h1> The Movie DB </h1>)).toBe(true);
+        expect(wrapper.contains('The Movie DB')).toEqual(true);
 	});
 
 	it('should has a state with a movie array', () => {
