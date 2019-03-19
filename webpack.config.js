@@ -19,11 +19,11 @@ const config = {
             new Dotenv({
                     path: '.env',
             }),
-              new SentryWebpackPlugin({
-                  include: '.',
-                  ignore: ['node_modules', 'webpack.config.js'],
-                  configFile: 'sentry.properties',
-                })
+              //new SentryWebpackPlugin({
+                  //include: './dist',
+                  //ignore: ['node_modules', 'webpack.config.js'],
+                  //configFile: './sentry.properties',
+                //})
         ],
 
         //transformations
@@ -42,7 +42,7 @@ const config = {
         },
 
         //sourcemaps
-        //devtool: 'source-map',
+        devtool: 'source-map',
 
         //server
         devServer: {
