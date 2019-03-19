@@ -53,6 +53,8 @@ export default class Main extends Component {
     }
 
     render() {
+        new Error('ccccc MAttia');
+        console.log('here');
         const movies = this.state.movies.map(
             x => <MovieCard
                 key={x.id}
@@ -60,40 +62,25 @@ export default class Main extends Component {
                 getSelectedMovie={this.getSelectedMovie}
             />
             );
-        const links = option.map(
-            x => <MovieButton
-                onClick={this.getMovies}
-                key={x.link}
-                movie={x}
-            />
-            );
-        const listMovieSearched = this.state.listMovie.map(
-                x => <SelectMovieButton
-                onClick={this.getSelectedMovie}
-                    movie={x}
-                key={x.id}
-            />
-            );
+        //const links = option.map(
+            //x => <MovieButton
+                //onClick={this.getMovies}
+                //key={x.link}
+                //movie={x}
+            ///>
+            //);
+        //const listMovieSearched = this.state.listMovie.map(
+                //x => <SelectMovieButton
+                //onClick={this.getSelectedMovie}
+                    //movie={x}
+                //key={x.id}
+            ///>
+            /*);*/
 
             return (
             <ExampleBoundary>
             <div>
-                <div className="mainBar">
-                    <h1 className="mainTitle">The Movie DB</h1>
-                    <div className="links">
-                        {links}
-                    </div>
-                    <form onChange={this.searchMovie} className="searchBar">
-                        <input className="input" placeholder="Type the movie to search" type="text" name="movieInput"/>
-                        {listMovieSearched}
-                    </form>
-                </div>
-                <div className="moviePageContainer">
-                    {this.showSelectedMovie()}
-                </div>
-                <div className="main">
-                    {movies}
-                </div>
+                icoa
             </div>
         </ExampleBoundary>
             );

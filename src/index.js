@@ -6,6 +6,6 @@ import './components/MovieCard/MovieCard.css';
 import './components/Main/Main.css';
 
 ReactDOM.render(
-	<ExampleBoundary />,
+	<Main />,
 	document.getElementById('root')
 );

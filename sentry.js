@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Main from './src/components/Main/Main';
 import * as Sentry from '@sentry/browser';
 Sentry.init({ dsn: 'https://9c3b8d28c3ef490fad9d975d5291b5d4@sentry.io/1418053' });
 
+Sentry.captureException(new Error('ciao mattia'));
 class ExampleBoundary extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +11,6 @@ class ExampleBoundary extends Component {
 
     componentDidCatch(error, errorInfo) {
       this.setState({ error });
-      debugger;
       Sentry.withScope(scope => {
         console.log('SCOPE >>>>>>.,', scope);
         Object.keys(errorInfo).forEach(key => {
@@ -30,7 +29,7 @@ class ExampleBoundary extends Component {
             );
         } else {
             //when there's not an error, render children untouched
-            return <Main />;
+            return <div>cia</div>;
         }
     }
 }
