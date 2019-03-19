@@ -52,16 +52,23 @@ export default class Main extends Component {
         }
     }
 
+    test() {
+        new Error('ciao Erro Mattia')
+        this.state.movies.map(x => x);
+    }
+
     render() {
         new Error('ccccc MAttia');
         console.log('here');
-        const movies = this.state.movies.map(
-            x => <MovieCard
-                key={x.id}
-                data={x}
-                getSelectedMovie={this.getSelectedMovie}
-            />
-            );
+        //const movies = this.state.movies.map(
+            //x => <MovieCard
+                //key={x.id}
+                //data={x}
+                //getSelectedMovie={this.getSelectedMovie}
+            ///>
+            //);
+            //
+        this.test();
         //const links = option.map(
             //x => <MovieButton
                 //onClick={this.getMovies}
