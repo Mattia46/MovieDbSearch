@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ExampleBoundary from '../../../sentry';
 import option from './../Utils/utils.js';
 import {
     apiFactoryList,
@@ -11,7 +12,7 @@ import MoviePage from './../MoviePage/MoviePage.js';
 
 export default class Main extends Component {
     initialState = {
-        movies: [],
+        movies: [{id: 1, title: 'cio'}, {id: 2, title: 'nope'}],
         listMovie: [],
         selectedMovie: '',
     }
@@ -75,6 +76,7 @@ export default class Main extends Component {
             );
 
             return (
+            <ExampleBoundary>
             <div>
                 <div className="mainBar">
                     <h1 className="mainTitle">The Movie DB</h1>
@@ -93,6 +95,7 @@ export default class Main extends Component {
                     {movies}
                 </div>
             </div>
+        </ExampleBoundary>
             );
     }
 }

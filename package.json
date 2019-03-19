@@ -11,12 +11,15 @@
   "author": "Mattia Assogna",
   "license": "ISC",
   "dependencies": {
+    "@sentry/browser": "^4.6.4",
+    "@sentry/node": "^4.6.4",
     "dotenv-webpack": "^1.5.4",
     "node-fetch": "^1.7.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@sentry/webpack-plugin": "^1.6.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
