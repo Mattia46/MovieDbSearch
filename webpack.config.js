@@ -20,7 +20,7 @@ const config = {
                     path: '.env',
             }),
               new SentryWebpackPlugin({
-                  include: '../dist',
+                  include: __dirname +  '/dist',
                   ignore: ['node_modules', 'webpack.config.js'],
                   configFile: './sentry.properties',
                 })
